@@ -1,35 +1,44 @@
 # Employee Attendance API
 
-This is a Spring Boot REST API for managing employee attendance.
-You can check in, check out, add attendance records, and fetch attendance history.
+This project is a Spring Boot RESTful API for managing employee attendance data. It includes persistence with MySQL, containerization with Docker, and Kubernetes deployment.
 
 ---
 
-## Features
+## Project Overview
 
-- Check in an employee
-- Check out an employee
-- Add attendance record manually (POST)
-- View attendance history by employee
-- View attendance by date
-
----
-
-## Endpoints
-
-| Method | URL                                     | Description                          |
-|--------|-----------------------------------------|------------------------------------|
-| POST   | `/api/attendance/checkin/{employeeId}`  | Employee check-in                   |
-| POST   | `/api/attendance/checkout/{employeeId}` | Employee check-out                  |
-| POST   | `/api/attendance`                       | Add attendance record (manual)     |
-| GET    | `/api/attendance/history/{employeeId}` | Get attendance history for employee|
-| GET    | `/api/attendance/daily/{date}`          | Get attendance for all on a date   |
+- **Spring Boot** based backend API for attendance management
+- **MySQL** as the relational database for storing employee and attendance data
+- **JPA / Hibernate** for ORM and database interactions
+- **Docker** support for containerizing the application
+- **Kubernetes** manifests for deployment and service exposure
+- **Port forwarding** configured for local testing
 
 ---
 
-## Example Usage
+## Features Implemented
 
-### Check-in
+- CRUD operations on attendance records
+- Employee details linked to attendance entries
+- JPA entities with proper mappings and repositories
+- REST controllers exposing `/api/attendance` endpoints
+- Proper connection pooling with HikariCP
+- Configuration for MySQL connection in Azure
+- Dockerfile added for building container images
+- Kubernetes deployment manifest (`attendance-deployment.yaml`) with:
+  - Deployment for app pods
+  - Service of type `LoadBalancer` with NodePort and port mapping
+- Local testing via `kubectl port-forward` and curl commands
+- Debugged and fixed runtime errors related to Java version compatibility and connection issues
+- Application exposed on custom port (`9090` in container)
+- Database connection verified and integrated successfully
+- Logs and health verified on Kubernetes pods
 
-```bash
-POST http://localhost:8081/api/attendance/checkin/1
+---
+
+## How to Run Locally
+
+1. Clone the repo
+2. Update `application.yml` with your MySQL Azure DB credentials
+3. Build the project:
+   ```bash
+   mvn clean install
