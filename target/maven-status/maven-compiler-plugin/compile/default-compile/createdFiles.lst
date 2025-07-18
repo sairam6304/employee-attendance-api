@@ -1,9 +1,10 @@
+com\example\attendance\kafka\KafkaProducerService.class
 com\example\employeeattendanceapi\config\KafkaProducerConfig.class
 com\example\attendance\repository\AttendanceRepository.class
+com\example\attendance\controller\TestController.class
 com\example\attendance\controller\EmployeeController.class
 com\example\attendance\repository\EmployeeRepository.class
 com\example\attendance\model\Attendance.class
 com\example\attendance\model\Employee.class
-com\example\employeeattendanceapi\kafka\KafkaProducerService.class
 com\example\attendance\AttendanceApplication.class
 com\example\attendance\controller\AttendanceController.class

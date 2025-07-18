@@ -37,6 +37,14 @@ class AttendanceControllerTest {
         employee.setId(123L);
         // initialize other employee fields if needed
     }
+    @Test
+    void testMarkAttendance_NullEmployee_ReturnsBadRequest() {
+        Attendance input = new Attendance(); // No employee set
+
+        ResponseEntity<Attendance> response = attendanceController.markAttendance(input);
+
+        assertEquals(400, response.getStatusCodeValue()); // Only if your controller handles it
+    }
 
     @Test
     void testGetAll() {

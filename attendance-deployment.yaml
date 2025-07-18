@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: attendance-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: attendance-app
+  template:
+    metadata:
+      labels:
+        app: attendance-app
+    spec:
+      containers:
+      - name: attendance-app
+        image: sairam9494/attendance-app:latest
+        ports:
+        - containerPort: 9090
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: attendance-service
+spec:
+  selector:
+    app: attendance-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9090
+  type: NodePort

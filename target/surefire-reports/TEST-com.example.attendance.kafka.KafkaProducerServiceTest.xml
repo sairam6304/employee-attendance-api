@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.attendance.controller.AttendanceControllerTest" time="3.643" tests="9" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.attendance.kafka.KafkaProducerServiceTest" time="0.501" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -59,27 +59,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testGetById_NotFound" classname="com.example.attendance.controller.AttendanceControllerTest" time="3.334">
-    <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\saira\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.13\byte-buddy-agent-1.14.13.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
-]]></system-err>
-  </testcase>
-  <testcase name="testDeleteAttendance_Found_DeletesAndSendsKafka" classname="com.example.attendance.controller.AttendanceControllerTest" time="0.059"/>
-  <testcase name="testGetById_Found" classname="com.example.attendance.controller.AttendanceControllerTest" time="0.021"/>
-  <testcase name="testDeleteAttendance_NotFound" classname="com.example.attendance.controller.AttendanceControllerTest" time="0.013"/>
-  <testcase name="testUpdateAttendance_NotFound" classname="com.example.attendance.controller.AttendanceControllerTest" time="0.011"/>
-  <testcase name="testGetAll" classname="com.example.attendance.controller.AttendanceControllerTest" time="0.01"/>
-  <testcase name="testUpdateAttendance_Found_UpdatesAndSendsKafka" classname="com.example.attendance.controller.AttendanceControllerTest" time="0.024"/>
-  <testcase name="testMarkAttendance_NullEmployee_ReturnsBadRequest" classname="com.example.attendance.controller.AttendanceControllerTest" time="0.011"/>
-  <testcase name="testMarkAttendance_WithNoCheckInTime_SetsCurrentTimeAndSendsKafka" classname="com.example.attendance.controller.AttendanceControllerTest" time="0.024">
-    <error message="Cannot invoke &quot;com.example.attendance.repository.EmployeeRepository.findById(Object)&quot; because &quot;this.employeeRepository&quot; is null" type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot invoke "com.example.attendance.repository.EmployeeRepository.findById(Object)" because "this.employeeRepository" is null
-	at com.example.attendance.controller.AttendanceController.markAttendance(AttendanceController.java:45)
-	at com.example.attendance.controller.AttendanceControllerTest.testMarkAttendance_WithNoCheckInTime_SetsCurrentTimeAndSendsKafka(AttendanceControllerTest.java:68)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></error>
-  </testcase>
+  <testcase name="testSendMessage" classname="com.example.attendance.kafka.KafkaProducerServiceTest" time="0.498"/>
 </testsuite>

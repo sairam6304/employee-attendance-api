@@ -25,6 +25,7 @@ public class Attendance {
     public Employee getEmployee() {
         return employee;
     }
+
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
@@ -32,6 +33,7 @@ public class Attendance {
     public LocalDate getDate() {
         return date;
     }
+
     public void setDate(LocalDate date) {
         this.date = date;
     }
@@ -39,6 +41,7 @@ public class Attendance {
     public LocalDateTime getCheckInTime() {
         return checkInTime;
     }
+
     public void setCheckInTime(LocalDateTime checkInTime) {
         this.checkInTime = checkInTime;
     }
@@ -46,6 +49,7 @@ public class Attendance {
     public LocalDateTime getCheckOutTime() {
         return checkOutTime;
     }
+
     public void setCheckOutTime(LocalDateTime checkOutTime) {
         this.checkOutTime = checkOutTime;
     }
@@ -53,6 +57,7 @@ public class Attendance {
     public Double getHoursWorked() {
         return hoursWorked;
     }
+
     public void setHoursWorked(Double hoursWorked) {
         this.hoursWorked = hoursWorked;
     }

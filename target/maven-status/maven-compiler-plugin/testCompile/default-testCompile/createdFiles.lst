@@ -1,1 +1,3 @@
 com\example\attendance\controller\AttendanceControllerTest.class
+com\example\attendance\kafka\KafkaProducerServiceTest.class
+com\example\attendance\controller\EmployeeControllerTest.class
