@@ -1,8 +1,12 @@
+jwt:
+  secret: 4Nwzq+eD8vJHSytbqBZo6K+FEMX49Zmh4Nwzq+eD8vJHSytbqBZo6K+FEMX49Zm # at least 32 chars
+  expirationMs: 3600000  # 1 hour in milliseconds
+
 spring:
   datasource:
     url: jdbc:mysql://attendance-mysql.mysql.database.azure.com:3306/attendance_db?useSSL=true&requireSSL=true
     username: adminuser
-    password: Sairam@Azure123  # <-- update with your actual password here
+    password: Sairam@Azure123
   jpa:
     hibernate:
       ddl-auto: update
@@ -12,3 +16,11 @@ spring:
 server:
   address: 0.0.0.0
   port: 8080
+  security:
+    user:
+      name: admin
+      password: admin
+      oauth2:
+        resourceserver:
+          jwt:
+            issuer-uri: http://localhost:8080/realms/emplyee-attendance-api
